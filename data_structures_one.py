@@ -20,6 +20,12 @@ print(a_tuple)
 # Dictionary
 
 simple_dict = {'a': 1, 'b': 2, 'c': 3}
+x = input()
+if x in simple_dict:
+    print(simple_dict[x])
+else:
+    print("Not found")
+
 
 # Use Cases for later projects
 
