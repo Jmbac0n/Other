@@ -7,11 +7,6 @@ key_name_file = 'D:\\MyScripts\\Data_Structures\\Pickle\\keys.pkl'
 key_file_dest = 'D:\\MyScripts\\Data_Structures\\Pickle\\Keys'
 key_file_source = 'D:\\MyScripts\\Data_Structures\\Pickle\\'
 
-key_name = input()
-
-keys = []
-
-
 # Saves name of string into seperate pickle folder
 
 def write_key(key_file, keyname, key_list):
@@ -45,7 +40,8 @@ def move_keys(keyname):
 
 def load_keys(keyname):
 
-    key_name = keyname
+    key_input = input()
+    return key_input # Need loaded_key = load_keys(key_name)
 
 # View Keys
 
@@ -61,6 +57,26 @@ def view_keys(key_file):
 # 2. Load Key
 # 3. View Keys
 
-write_key(key_name_file, key_name, keys)
-move_keys(key_name)
-view_keys(key_name_file)
+print("""\
+
+    Select an option:
+
+    [1] - Write Key
+    [2] - Load Key
+    [3] - Views Keys
+
+    """)
+user_choice = input()
+
+if user_choice == "1":
+    key_name = input()
+    keys = []
+    print("Enter key name: ")
+    write_key(key_name_file, key_name, keys)
+    move_keys(key_name)
+if user_choice == "2":
+    print("Choose a key to load: ")
+    loaded_key = load_keys(key_name)
+if user_choice == "3":
+    print("Existing keys:")
+    view_keys(key_name_file)
